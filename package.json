@@ -11,10 +11,10 @@
     "type": "git",
     "url": "git@github.com:smartameer/tambola-js.git"
   },
-  "author": "Pradeep Patro",
+  "author": "",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/smartameer/tambola-js/issues"
+    "url": "https://github.com/tambola-js/issues"
   },
   "dependencies": {
     "express": "~4.13.4",
