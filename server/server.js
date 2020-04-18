@@ -7,7 +7,7 @@ var express  = require('express')
   , io       = require('socket.io').listen(server)
   ;
 
-app.use(express.static(client + "/../client"));
+app.use(express.static(__dirname + "/../client"));
 
 //random number
 var ticketArray = []
