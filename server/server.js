@@ -2,7 +2,7 @@ var express  = require('express')
   , fs       = require('fs')
   , http     = require('http')
   , app      = express()
-  , host     = 'samhousieplay.herokuapp.com'
+  , host     = 'localhost'
   , server   = http.createServer(app).listen(process.env.PORT || 8080, host)
   , io       = require('socket.io').listen(server)
   ;
