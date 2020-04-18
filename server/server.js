@@ -2,12 +2,12 @@ var express  = require('express')
   , fs       = require('fs')
   , http     = require('http')
   , app      = express()
-  , host     = 'localhost'
-  , server   = http.createServer(app).listen(8081, host)
+  , host     = 'samhousieplay.herokuapp.com'
+  , server   = http.createServer(app).listen(process.env.PORT || 8080, host)
   , io       = require('socket.io').listen(server)
   ;
 
-app.use(express.static(__dirname + "/../client"));
+app.use(express.static(client + "/../client"));
 
 //random number
 var ticketArray = []
