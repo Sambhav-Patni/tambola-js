@@ -20,6 +20,7 @@ var express  = require('express')
 
 app.use(express.static(__dirname + "/../client"));
 app.use(cors());
+app.options('*', cors());
 
 //random number
 var ticketArray = []
