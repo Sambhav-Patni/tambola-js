@@ -2,6 +2,7 @@ var express  = require('express')
   , fs       = require('fs')
   , http     = require('http')
   , app      = express()
+  , cors 	   = require('cors')
   , host     = 'localhost'
   , server   = http.createServer(app).listen(process.env.PORT || 8080, host)
   , io       = require('socket.io')(server, {
@@ -18,6 +19,7 @@ var express  = require('express')
   ;
 
 app.use(express.static(__dirname + "/../client"));
+app.use(cors());
 
 //random number
 var ticketArray = []
