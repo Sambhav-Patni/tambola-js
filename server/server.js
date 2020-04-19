@@ -32,21 +32,21 @@ var generateRandom = function () {
     ticketArray[ticketArray.length] = randomNumber;
     return randomNumber;
   } else {
-    writeLog("Progress: Repeated Random Number is : " + randomNumber);
+    console.info("Progress: Repeated Random Number is : " + randomNumber);
   }
   return true;
 };
 
-console.info("Server Started on " + host + ":8081");
-writeLog("Start: Server Started on " + host + ":8081");
+console.info("Server Started on " + host + ":"+process.env.PORT);
+//writeLog("Start: Server Started on " + host + ":8081");
 
 var sendHeartbeat = function () {
   var randomNumber = false;
   if (ticketArray.length <= 89) {
     randomNumber = generateRandom();
   } else {
-    writeLog("Progress: Ticket List sequence is :" + ticketArray.join(' - '));
-    writeLog("End: Game Over.");
+    console.info("Progress: Ticket List sequence is :" + ticketArray.join(' - '));
+    console.info("End: Game Over.");
     for (var i in Socket) {
       Socket[i].emit('heartbeat', {'message': "Game Over :)"});
     }
@@ -55,7 +55,7 @@ var sendHeartbeat = function () {
   if (randomNumber === false) {
   } else if (randomNumber === true) {
   } else {
-    writeLog("Progress: Random Number is : " + randomNumber);
+    console.info("Progress: Random Number is : " + randomNumber);
     for (var i in Socket) {
       Socket[i].emit('heartbeat', {'num': randomNumber});
     }
@@ -65,15 +65,15 @@ var sendHeartbeat = function () {
 io.sockets.on('connection', function (socket) {
   Socket.push(socket);
   console.log("socket connected");
-  var IpAddress = socket.handshake.address.address;
-  writeLog("Join: User Number :" + Socket.length + ", IP Address :" + IpAddress);
+  var IpAddress = socket.handshake.address;
+  console.info("Join: User Number :" + Socket.length + ", IP Address :" + IpAddress);
 
   for (var i in Socket) {
     Socket[i].emit('heartbeat', {'previous': ticketArray});
   }
   socket.on('disconnect', function () {
     console.log('socket connection disconnected');
-    writeLog("Left: IP Address :" + IpAddress);
+    console.info("Left: IP Address :" + IpAddress);
   });
 });
 
