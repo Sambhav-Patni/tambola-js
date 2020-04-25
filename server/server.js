@@ -4,16 +4,17 @@ var express  = require('express')
   , app      = express()
   , cors 	   = require('cors')
   , host     = 'localhost'
-  , server   = http.createServer(app).listen(process.env.PORT || 8080, host)
+  //, server   = http.createServer(app).listen(process.env.PORT || 8080, host)
   , io       = require('socket.io')(server, { origins: '*:*'})
 ;
-
+const PORT = process.env.PORT || 3000;
 //app.use(express.static(__dirname + "/../client"));
 //app.use(cors());
 //app.options('*', cors());
 app.use(function (req, res){  
 console.log(req.url);
 res.sendFile(req.url, { root: __dirname+ "/client" })})  
+.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 //random number
 var ticketArray = []
