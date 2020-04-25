@@ -42,6 +42,12 @@ var writeLog = function (str) {
 var generateRandom = function () {
   var rand = Math.random() * 90;
   var randomNumber = Math.floor(rand + 1);
+	while(ticketArray.indexOf(randomNumber) != -1){
+	  console.log("Retrying after repeat: "+ randomNumber);
+	  rand = Math.random() * 90;
+	  randomNumber = Math.floor(rand + 1);
+	  //console.log("New Number: "+ randomNumber);
+  	}
   if (ticketArray.indexOf(randomNumber) === -1 ) {
     ticketArray[ticketArray.length] = randomNumber;
     return randomNumber;
