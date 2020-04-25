@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 //app.options('*', cors());
 app.use(function (req, res){  
 console.log(req.url);
-res.sendFile(req.url, { root: __dirname+ "/client" })})  
+res.sendFile(req.url, { root: __dirname })})  
 .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 //random number
