@@ -4,7 +4,7 @@ var express  = require('express')
   , app      = express()
   , cors 	   = require('cors')
   , host     = 'localhost'
-  //, server   = http.createServer(app).listen(process.env.PORT || 8080, host)
+  , server   = http.createServer(app)//.listen(process.env.PORT || 8080, host)
   , io       = require('socket.io')//(server, { origins: '*:*'})
 ;
 const PORT = process.env.PORT || 3000;
