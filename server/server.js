@@ -13,14 +13,21 @@ var express  = require('express')
 //app.options('*', cors());
 app.use(function (req, res){  
 console.log(req.url);
-res.sendFile(req.url, { root: __dirname })})  
+  if(req.url.includes("sendHeartbeat")){
+	sendHeartbeat();
+	res.status(200).send("Current Sequence: " +ticketArray.join(' - '));
+  }
+  else{
+  res.sendFile(req.url, { root: __dirname })
+  }
+})  
 //.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 //random number
 var ticketArray = []
   , fileName = "tambola.log"
   , Socket = []
-  , secondsLeft = 20
+  , secondsLeft = 10
   ;
 
 var writeLog = function (str) {
@@ -95,8 +102,8 @@ var showTimer = function () {
 
 var interval = setInterval( function () {
   if (secondsLeft == 0) {
-    clearInterval(interval);
-    setInterval(sendHeartbeat, 6000);
+    //clearInterval(interval);
+    //setInterval(sendHeartbeat, 6000);
     return false;
   }
   showTimer();
