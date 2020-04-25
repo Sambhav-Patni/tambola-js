@@ -5,7 +5,7 @@ var express  = require('express')
   , cors 	   = require('cors')
   , host     = 'localhost'
   //, server   = http.createServer(app).listen(process.env.PORT || 8080, host)
-  , io       = require('socket.io')(server, { origins: '*:*'})
+  , io       = require('socket.io')//(server, { origins: '*:*'})
 ;
 const PORT = process.env.PORT || 3000;
 //app.use(express.static(__dirname + "/../client"));
