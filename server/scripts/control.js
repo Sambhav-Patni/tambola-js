@@ -12,8 +12,8 @@ $(document).ready(function() {
   $('#ticket > tbody').html(table);
 
 
-  var socket = io('http://localhost:8080');
-  //var socket = io('http://samhousieplay.herokuapp.com');
+  //var socket = io('http://localhost:8080');
+  var socket = io('http://samhousieplay.herokuapp.com');
   socket.on('heartbeat', function(data){
     if ('previous' in data) {
       $('td[class="^td"] span').removeClass('checked');
