@@ -86,13 +86,14 @@ $(document).ready(function() {
     }
   });
 
-	$("#btn-chat").click(function(e) {
-    e.preventDefault();
-    $.ajax({
+  $("#btn-chat").click(function(e) {
+  e.preventDefault();
+  $.ajax({
       type: "POST",
       url: "/chat?chat=" + $("#chat-Name").val()+":"+$("#btn-input").val(),           
-    });
-	});
+  });
+  $("#btn-input").val("");
+  });
 
   socket.on('disconnect', function(){
     alert('You are offline');
