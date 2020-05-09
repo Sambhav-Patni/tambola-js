@@ -126,7 +126,7 @@ function checkCookie() {
 function claim(claimType) {
 $.ajax({
       type: "POST",
-      url: "/chat?chat=" + $("#chat-Name").val()+": CLAIMS "+claimType,           
+      url: "/chat?chat=" + $("#chat-Name").val()+": "+claimType,           
     });
 	$("#btn-input").val("");
 	$('#chat-list').parent().animate({
@@ -153,15 +153,15 @@ $.ajax({
           <div class="panel panel-primary">
             <div class="panel-heading">Claim Prize</div>
             <div class="panel-body">
-              <button class="btn btn-warning btn-sm btn-claim" id="btn-claim1" onclick="claim('Mahal 🏘️ 🏘️ 🏘️')">Mahal</button>
-			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim2" onclick="claim('Haveli 🏘️ 🏘️ 🏘️')">Haveli</button>
-			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim3" onclick="claim('Kothi 🏘️ 🏘️ 🏘️')">Kothi</button>
-			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim4" onclick="claim('King 🤴 🤴 🤴')">King</button>
-			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim5" onclick="claim('Queen 👸 👸 👸')">Queen</button>
-			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim6" onclick="claim('Jack 💁‍ 💁‍ 💁‍')">Jack</button>
-			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim7" onclick="claim('Attack 1 💰💰💰')">Attack 1</button>
-			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim8" onclick="claim('Attack 2 💰💰💰')">Attack 2</button>
-			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim9" onclick="claim('Sena 🎖️ 🎖️ 🎖️')">Sena</button>
+              <button class="btn btn-warning btn-sm btn-claim" id="btn-claim1" onclick="claim('Mahal 🏘️ पर कब्जा करना चाहते हैं')">Mahal</button>
+			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim2" onclick="claim('Haveli 🏘️ पर कब्जा करना चाहते हैं')">Haveli</button>
+			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim3" onclick="claim('Kothi 🏘️ पर कब्जा करना चाहते हैं')">Kothi</button>
+			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim4" onclick="claim('King 🤴 पर कब्जा करना चाहते हैं')">King</button>
+			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim5" onclick="claim('Queen 👸 पर कब्जा करना चाहते हैं')">Queen</button>
+			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim6" onclick="claim('Jack 💁‍ पर कब्जा करना चाहते हैं‍')">Jack</button>
+			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim7" onclick="claim('Loot 1 💰 पर कब्जा करना चाहते हैं')">Loot 1</button>
+			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim8" onclick="claim('Loot 2 💰 पर कब्जा करना चाहते हैं')">Loot 2</button>
+			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim9" onclick="claim('Sena 🎖️ पर कब्जा करना चाहते हैं')">Sena</button>
             </div>
 			
           </div>
