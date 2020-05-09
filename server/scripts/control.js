@@ -98,17 +98,17 @@ $(document).ready(function() {
   $("#btn-input").val("");
   });
 
-  $("#btn-chat-claim").click(function(e) {
+  $("#btn-chat-play").click(function(e) {
     e.preventDefault();
     $.ajax({
       type: "POST",
-      url: "/chat?chat=" + $("#chat-Name").val()+": CLAIM 💰💰💰",           
+      url: "/sendHeartbeat",           
     });
 	$("#btn-input").val("");
 	$('#chat-list').parent().animate({
         scrollTop: ($('#chat-list').parent()[0].scrollHeight)
       }, 800);
-    });
+	});
 	
   socket.on('disconnect', function(){
     alert('You are offline');
