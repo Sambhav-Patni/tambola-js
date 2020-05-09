@@ -31,10 +31,10 @@ else{
 //.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 //random number
-var ticketArray = []
-  , fileName = "tambola.log"
+var ticketArray = []  
   , Socket = []
   , secondsLeft = 10
+  , chatArray = []
   ;
 
 var writeLog = function (str) {
