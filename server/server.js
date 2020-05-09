@@ -33,7 +33,7 @@ else{
 //random number
 var ticketArray = []  
   , Socket = []
-  , secondsLeft = 10
+  , secondsLeft = 180
   , chatArray = []
   ;
 
