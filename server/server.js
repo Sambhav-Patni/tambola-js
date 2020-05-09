@@ -17,7 +17,14 @@ console.log(req.url);
 	sendHeartbeat();
 	res.status(200).send("Current Sequence: " +ticketArray.join(' - '));
   }
-  else{
+else if(req.url.includes("chat")){
+	chatArray[chatArray.length] = req.query.chat;
+	for (var i in Socket) {
+      		Socket[i].emit('heartbeat', {'chat': req.query.chat});
+    	}
+	res.status(200).send("Char Sequence: " +chatArray.join(' <br/>:  '));
+}
+else{
   res.sendFile(req.url, { root: __dirname })
   }
 })  
