@@ -76,6 +76,9 @@ $(document).ready(function() {
                             </div>																							\
                         </li> ';
 		});
+	$('#chat-list').parent().animate({
+        scrollTop: ($('#chat-list').parent()[0].scrollHeight)
+      	}, 500);
 		
 	}
 	else {
