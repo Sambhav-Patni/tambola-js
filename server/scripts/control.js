@@ -36,6 +36,8 @@ $(document).ready(function() {
     }
     if ('num' in data) {
       var num = data.num;
+	var audio = new Audio('https://evolution.voxeo.com/library/audio/prompts/numbers/'+num+'.wav');
+	audio.play();
       $('#prev3').html($('#prev2').text());
       $('#prev2').html($('#prev1').text());
       $('#prev1').html($('#current').text());
