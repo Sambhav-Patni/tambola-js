@@ -78,7 +78,7 @@ var ticketArray = []
   , userArray = [] 
   , userObjectArr = []
   , claims = []
-  , timeout = 6000
+  , timeout = 8000
   , autoCall
   , _tempObj
   ;
