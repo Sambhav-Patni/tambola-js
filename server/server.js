@@ -152,6 +152,8 @@ io.sockets.on('connection', function (socket) {
 
   for (var i in Socket) {
     Socket[i].emit('heartbeat', {'previous': ticketArray});
+	Socket[i].emit('heartbeat', {'chat': handshakeData._query['UserName']+'$Present Sir!!!'});
+	Socket[i].emit('heartbeat', {'claims': claims});
   }
   socket.on('disconnect', function () {
     console.log('socket connection disconnected');
