@@ -99,15 +99,17 @@ $(document).ready(function() {
   });
 
 	$("#btn-chat").click(function(e) {
-    e.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "/chat?chat=" + $("#chat-Name").val()+"$"+$("#btn-input").val(),           
-    });
-	$("#btn-input").val("");
-	$('#chat-list').parent().animate({
-        scrollTop: ($('#chat-list').parent()[0].scrollHeight)
-      }, 800);
+		if(!$("#btn-input").val()==""){
+			e.preventDefault();
+			$.ajax({
+				type: "POST",
+				url: "/chat?chat=" + $("#chat-Name").val()+"$"+$("#btn-input").val(),           
+			});
+			$("#btn-input").val("");
+			$('#chat-list').parent().animate({
+			scrollTop: ($('#chat-list').parent()[0].scrollHeight)
+			}, 800);
+		}
 	});
 	
 	$("#btn-chat-play").click(function(e) {
