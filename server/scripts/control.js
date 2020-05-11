@@ -14,8 +14,8 @@ $(document).ready(function() {
 	if(getCookie("username")==""){
 		checkCookie();
 	}
-  var socket = io('http://localhost:8080?UserName='+getCookie("username"));//$("#chat-Name").val());
-  //var socket = io('http://samhousieplay.herokuapp.com');
+  //var socket = io('http://localhost:8080?UserName='+getCookie("username"));//$("#chat-Name").val());
+  var socket = io('http://samhousieplay.herokuapp.com?UserName='+getCookie("username"));
   socket.on('heartbeat', function(data){
     if ('previous' in data) {
       $('td[class="^td"] span').removeClass('checked');
