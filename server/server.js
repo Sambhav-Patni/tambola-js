@@ -64,6 +64,10 @@ else if(req.url.includes("accept")){
 else if(req.url.includes("chatAll")){	
 	res.status(200).send("Char Sequence: " +chatArray.join(' <br/>:  '));	
 }
+else if(req.url.includes("start")){	
+	secondsLeft=0;
+	res.status(200).send("OK");	
+}	
 else{
   res.sendFile(req.url, { root: __dirname })
   }
