@@ -55,7 +55,7 @@ else if(req.url.includes("accept")){
 	claims[claims.length] = _tempObj;
 	chatPush("Admin$आपके दावे को स्वीकार कर लिया गया है। धन्यवाद ।।।");
 	//autocall = setInterval(sendHeartbeat,timeout);
-	intervalManager(true,sendHeartbeat, timeout);
+	//intervalManager(true,sendHeartbeat, timeout);
 	for (var i in Socket) {
       Socket[i].emit('heartbeat', {'claims': claims});
     }
