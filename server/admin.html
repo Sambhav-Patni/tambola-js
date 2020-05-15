@@ -164,6 +164,9 @@ function claim(claimType,id) {
 	else if(id.includes('10')){
 		claimType='Khajane 💰';
 	}
+	else if(id.includes('11')){
+		claimType='Prince 🤴';
+	}
 	claimType+=' पर कब्जा करना चाहते हैं';
 $.ajax({
       type: "POST",
@@ -215,6 +218,7 @@ $.ajax({
 			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim8" onclick="claim('Loot 2 💰 पर कब्जा करना चाहते हैं',this.id)">Loot 2</button>
 			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim9" onclick="claim('Sena 🎖️ पर कब्जा करना चाहते हैं',this.id)">Sena</button>
 			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim10" onclick="claim('Khajane 💰 पर कब्जा करना चाहते हैं',this.id)">Khajana</button>
+			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim11" onclick="claim('Prince 🤴 पर कब्जा करना चाहते हैं',this.id)">Prince</button>
 			  <button class="btn btn-warning btn-sm btn-claim" id="btn-Resume" onclick="adminCall('accept')">ACCEPT</button>
 			  <button class="btn btn-warning btn-sm btn-claim" id="btn-Resume" onclick="adminCall('resume')">RESUME</button>
 			  <button class="btn btn-warning btn-sm btn-claim" id="btn-Stop" onclick="adminCall('stop')">STOP</button>

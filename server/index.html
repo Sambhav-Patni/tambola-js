@@ -86,18 +86,7 @@ input[type=text] {
 }
 
     </style>
-	  
-	  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162205068-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-162205068-2');
-</script>
-
-	<script>		
+	<script>
 function setCookie(cname,cvalue,exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -171,6 +160,9 @@ function claim(claimType,id) {
 	else if(id.includes('10')){
 		claimType='Khajane 💰';
 	}
+	else if(id.includes('11')){
+		claimType='Prince 🤴';
+	}
 	claimType+=' पर कब्जा करना चाहते हैं';
 $.ajax({
       type: "POST",
@@ -215,6 +207,7 @@ $.ajax({
 			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim8" onclick="claim('Loot 2 💰 पर कब्जा करना चाहते हैं',this.id)">Loot 2</button>
 			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim9" onclick="claim('Sena 🎖️ पर कब्जा करना चाहते हैं',this.id)">Sena</button>
 			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim10" onclick="claim('Khajane 💰 पर कब्जा करना चाहते हैं',this.id)">Khajana</button>
+			  <button class="btn btn-warning btn-sm btn-claim" id="btn-claim11" onclick="claim('Prince 🤴 पर कब्जा करना चाहते हैं',this.id)">Prince</button>
             </div>
 			
           </div>
